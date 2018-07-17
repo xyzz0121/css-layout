@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左定宽右自适应，右定宽同理</title>
+    <style>
+        /* 左定宽右自适应1：左float 右margin怼上去  */
+        .father1{
+            overflow: hidden;/* 核心 */
+        }
+        .son1_left{
+            float: left;/* 核心 */
+            background: #6596df;
+            width: 200px;
+            height: 50px;
+        }
+        .son1_right{
+            margin-left: 200px;/* 核心 */
+            background: yellowgreen;
+            height: 50px;
+        }
+        /* 左定宽右自适应2：左定位 右margin怼上去 原理同浮动，都是让左面的脱离文档流，飘起来 */
+        .father2{
+            position: relative;
+        }
+        .son2_left{
+            position: absolute;/* 核心 */
+            left: 0;/* 核心 */
+            top: 0;/* 核心 */
+            background: #6596df;
+            width: 200px;
+            height: 50px;
+        }
+        .son2_right{
+            margin-left: 200px;/* 核心 */
+            background: yellowgreen;
+            height: 50px;
+        }
+        /* 左定宽右自适应3：左固定宽度 右flex=1 */
+        .father3{
+            display: -webkit-box;/* 核心 */
+        }
+        .son3_left{
+            width: 200px;
+            display: block;
+            background: #6596df;
+            height: 50px;
+        }
+        .son3_right{
+            -webkit-box-flex: 1;/* 核心 */
+            display: block;
+            background: yellowgreen;
+            height: 50px;
+        }
+        /* 左定宽右自适应4：table大法好 兼容性OK的也易于理解 */
+        .father4{
+            display: table;/* 核心 */
+        }
+        .son4_left{
+            width: 200px;
+            display: table-cell;/* 核心 */
+            background: #6596df;
+            height: 50px;
+        }
+        .son4_right{
+            display: table-cell;/* 核心 */
+            background: yellowgreen;
+            height: 50px;
+        }
+        /* 左定宽右自适应5：优先显示右侧内容*/
+        .father5{
+            overflow: hidden;/* 核心 */
+        }
+        .son5_right{
+            width: 100%;/* 核心 */
+            margin-right: -100%;/* 核心 */
+            float: left;
+            background: yellowgreen;
+            height: 50px;
+        }
+        .son5_left{
+            float: left;/* 核心 */
+            background: #6596df;
+            height: 50px;
+            width: 200px;/* 核心 */
+        }
+    </style>
+</head>
+<body>
+    <div class="father1">
+        <div class="son1_left"></div>
+        <div class="son1_right"></div>
+    </div>
+    <br/>
+    <div class="father2">
+        <div class="son2_left"></div>
+        <div class="son2_right"></div>
+    </div>
+    <br/>
+    <div class="father3">
+        <div class="son3_left"></div>
+        <div class="son3_right"></div>
+    </div>
+    <br/>
+    <div class="father4">
+        <div class="son4_left"></div>
+        <div class="son4_right">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+    </div>
+    <br/>
+    <div class="father5">
+        <div class="son5_right"></div>
+        <div class="son5_left"></div>
+    </div>
+</body>
+</html>

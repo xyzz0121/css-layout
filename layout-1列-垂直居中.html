@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1列垂直居中</title>
+    <style>
+        /*1列垂直居中1 height=line-height 加vertical-align:middle;*/
+        .father1{
+            line-height: 100px;/* 核心 */
+            height: 100%;/* 核心 */
+            background: yellowgreen;
+        }
+        .son1{
+            display: inline-block;/* 核心 */
+            vertical-align: middle;/* 核心 */
+            width: 200px;
+            height: 50px;
+            background: #6596df;
+        }
+        /* 1列垂直居中2 top50% margintop -height/2 */
+        .father2{
+            height: 100px;
+            position: relative;/* 核心 */
+            background: yellowgreen;
+        }
+        .son2{
+            position: absolute;/* 核心 */
+            height: 50px;
+            margin-top:-25px;/* 核心 */
+            top:50%;/* 核心 */
+            width: 200px;
+            background: #6596df;
+        }
+        /* 1列垂直居中3 dispaly:table-cell */
+        .father3{
+            display: table-cell;/* 核心 */
+            vertical-align: middle;/* 核心 */
+            height: 100px;
+            background: yellowgreen;
+        }
+        .son3{
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+        /* 1列垂直居中4 margin height/2 兼容性贼好 需要知道高度 */
+        .father4{
+            height: 100px;
+            overflow: hidden;/* 核心 */
+            background: yellowgreen;
+        }
+        .son4{
+            margin: 25px 0;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+        /* 1列垂直居中5 伪元素占位  */
+        .father5{
+            height: 100px;
+            background: yellowgreen;
+        }
+        .father5::before{
+            content: '';/* 核心 */
+            height: 50%;/* 核心 */
+            display: block;/* 核心 */
+            margin-bottom: -25px;/* 核心 */
+        }
+        .son5{
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+        /* 1列垂直居中6 伪元素占位  */
+        .father6{
+            height: 100px;
+            background: yellowgreen;
+        }
+        .father6::before{
+            content: '';/* 核心 */
+            height: 100%;/* 核心 */
+            display: inline-block;/* 核心 */
+            vertical-align: middle;/* 核心 */
+        } 
+        .son6{
+            display: inline-block;/* 核心 */
+            vertical-align: middle;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+        /* 1列垂直居中7 激进的display:box,box-orirnt:vertical,box-pack:center */
+        .father7{
+            display: -webkit-box;/* 核心 */
+            -webkit-box-orient:vertical;/* 核心 */
+            -webkit-box-pack:center;/* 核心 */
+            height: 100px;
+            background: yellowgreen;
+        }
+        .son7{
+            display: inline-block;/* 核心 */
+            vertical-align: middle;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+    </style>
+</head>
+<body>
+    <div class="father1">
+        <div class="son1"></div>
+    </div>
+    <br/>
+    <div class="father2">
+        <div class="son2"></div>
+    </div>
+    <br/>
+    <div class="father3">
+        <div class="son3"></div>
+    </div>
+    <br/>
+    <div class="father4">
+        <div class="son4"></div>
+    </div>
+    <br/>
+    <div class="father5">
+        <div class="son5"></div>
+    </div>
+    <br/>
+    <div class="father6">
+        <div class="son6"></div>
+    </div>
+    <br/>
+    <div class="father7">
+        <div class="son7"></div>
+    </div>
+
+</body>
+</html>

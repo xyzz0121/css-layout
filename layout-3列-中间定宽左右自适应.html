@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中间定宽左右自适应</title>
+    <style>
+        /* 中间定宽左右自适应1:flex */
+        .father1{
+            display: -webkit-box;/* 核心 */
+        }
+        .son1_left{
+            display: block;/* 核心 */
+            -webkit-box-flex: 1;/* 核心 */
+            height: 50px;
+            background: yellowgreen;
+        }
+        .son1_main{
+            display: block;
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+        .son1_right{
+            display: block;
+            -webkit-box-flex: 1;
+            height: 50px;
+            background: yellowgreen;
+        }
+
+
+        /* 中间定宽左右自适应2:左飘-margin，右飘-margin  */
+         .father2{
+            overflow: hidden;/* 核心 */
+        }
+        .son2_left{
+            float: left;/* 核心 */
+            margin-left: -100px;/* 核心 */
+            height: 50px;
+            width: 50%;/* 核心 */
+            background: yellowgreen;
+        }
+        .son2_main{
+            float: left;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: #6596df;
+        }
+        .son2_right{
+            float: left;/* 核心 */
+            margin-right: -100px;/* 核心 */
+            width: 50%;/* 核心 */
+            height: 50px;
+            background: yellowgreen;
+        } 
+        
+        /* 中间定宽左右自适应3:定位+margin */
+        .father3{
+            position: relative;
+        }
+        .son3_left{
+            background:yellowgreen;
+            position:absolute; /* 核心 */
+            left:0;
+            right:50%; /* 核心 */
+            height:50px;
+            margin-right:100px; /* 核心 */
+        }
+        .son3_main{
+            background:#6596df;
+            margin:0 auto;
+            height:50px;
+            width:200px;
+        }
+        .son3_right{
+            background:yellowgreen;
+            position:absolute; /* 核心 */
+            left:50%;  /* 核心 */
+            top: 0;
+            right:0;
+            height:50px;
+            margin-left:100px; /* 核心 */
+        }
+    </style>
+</head>
+<body>
+    <div class="father1">
+        <div class="son1_left"></div>
+        <div class="son1_main"></div>
+        <div class="son1_right"></div>
+    </div>
+    <br/>
+    <div class="father2">
+        <div class="son2_left"></div>
+        <div class="son2_main"></div>
+        <div class="son2_right"></div>
+    </div>
+    <br/>
+    <div class="father3">
+        <div class="son3_left"></div>
+        <div class="son3_main"></div>
+        <div class="son3_right"></div>
+    </div>
+</body>
+</html>

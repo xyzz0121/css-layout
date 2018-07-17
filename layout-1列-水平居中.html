@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1列水平居中</title>
+</head>
+    <style>
+        /*1列水平居中1: margin0auto */
+        .son1{
+            margin: 0 auto;/* 核心 */
+            background: #6596df;
+            width: 200px;
+            height: 50px;
+        }
+        /*1列水平居中2: text-algin:center+inline-block */
+        .father2{
+            text-align: center;/* 核心 */
+            font-size: 0;/* 核心 */
+        }
+        .son2{
+            display: inline-block;/* 核心 */
+            background: #6596df;
+            width: 200px;
+            height: 50px;
+        }
+        /*1列水平居中3: margin-left=-width/2 有局限性 必须知道宽度 */
+        .son3{
+            position: relative;
+            left: 50%;
+            margin-left: -100px;
+            background: #6596df;
+            width: 200px;
+            height:50px;
+        }
+        /*1列水平居中4: helper拉中 */
+        .father4{
+            overflow: hidden;/* 核心 */
+        }
+        .helper4{
+            /* 浮动宽度由自身内容决定 也就是son的宽度 */
+            float: left;/* 核心 */
+            position: relative;/* 核心 */
+            left: 50%;/* 核心 */
+        }
+        .son4{
+            background: #6596df;
+            position: relative;/* 核心 */
+            /* 如果上面不用float:left;这里就不能用50%，而是自身width/2 */
+            right: 50%;/* 核心 */ 
+            width: 200px;
+            height: 50px;
+        }
+        /*1列水平居中5:fit-content 宽度自适应  */
+        .father5{
+            margin: 0 auto;/* 核心 */
+            width:fit-content;/* 核心 */
+        }
+        .son5{
+            width: 200px;
+            height: 50px;
+            background: #6596df;
+        }
+        /*1列水平居中6:dispaly:-webkit-box  */
+        .father6{
+            display: -webkit-box;/* 核心 */
+            -webkit-box-pack:center;/* 核心 */
+            -webkit-box-orient: horizontal; /* 核心 */
+        }
+        .son6{
+            width: 200px;
+            height: 50px;
+            background: #6596df;
+        }
+    </style>
+<body>
+    <div class="son1"></div>
+    <br/>
+    <div class="father2">
+        <span class="son2"></span>
+    </div>
+    <br/>
+    <div class="son3"></div>
+    <br/>
+    <div class="father4">
+        <div class="helper4">
+            <div class="son4"></div>
+        </div>
+    </div>
+    <br/>
+    <div class="father5">
+        <div class="son5"></div>
+    </div>
+    <br/>
+    <div class="father6">
+        <div class="son6"></div>
+    </div>
+</body>
+</html>

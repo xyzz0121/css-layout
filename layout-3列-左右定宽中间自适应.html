@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左右定宽中间自适应</title>
+    <style>
+        /*左右定宽中间自适应1: 左右分别向左右浮动 中间留出来位置 */
+        .father1{
+            overflow: hidden;
+        }
+        .son1_left{
+            float: left;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+
+        }
+        .son1_right{
+            float: right;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+        }
+        .son1_main{
+            margin-left: 200px; /* 核心 */
+            margin-right: 200px; /* 核心 */
+            background: #6596df;
+            height: 50px;
+        }
+        /*左右定宽中间自适应2: 左右分别向左右定位 中间留出来位置 */
+        .father2{
+            position: relative;
+        }
+        .son2_left{
+            position: absolute;/* 核心 */
+            left: 0;
+            top: 0;
+            height: 50px;
+            width: 200px;/* 核心 */
+            background: yellowgreen;
+
+        }
+        .son2_main{
+            margin-left: 200px; /* 核心 */
+            margin-right: 200px; /* 核心 */
+            background: #6596df;
+            height: 50px;
+        }
+        .son2_right{
+            position: absolute;/* 核心 */
+            right: 0;
+            top: 0;
+            height: 50px;
+            width: 200px;/* 核心 */
+            background: yellowgreen;
+        }
+        /*左右定宽中间自适应3: flex 谁自适应给谁1 */
+        .father3{
+            display: -webkit-box;/* 核心 */
+        }
+        .son3_left{
+            display: block;
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+
+        }
+        .son3_main{
+            -webkit-box-flex: 1;/* 核心 */
+            display: block;
+            background: #6596df;
+            height: 50px;
+        }
+        .son3_right{
+            display: block;
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+        }
+        /*左右定宽中间自适应4: table大法好 有些副作用 */
+        .father4{
+            display: table;/* 核心 */
+            width: 100%;
+        }
+        .son4_left{
+            display: table-cell;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+
+        }
+        .son4_main{
+            display: table-cell;/* 核心 */
+            background: #6596df;
+            height: 50px;
+        }
+        .son4_right{
+            display: table-cell;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+        }
+        /*左右定宽中间自适应5: -100%margin*/
+        .father5{
+            overflow: hidden;/* 核心 */
+        }
+        .son5_main{
+            float: left;
+            width: 100%;/* 核心 */
+            margin-right: -100%;/* 核心 */
+            background: #6596df;
+            height: 50px;
+        }
+        .son5_left{
+            float: left;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+        }
+        .son5_right{
+            float: right;/* 核心 */
+            height: 50px;
+            width: 200px;
+            background: yellowgreen;
+        }
+        /*左右定宽中间自适应6: 圣杯布局*/
+        .son6_left,.son6_main,.son6_right{ 
+            position: relative;/* 核心 */
+            float: left;/* 核心 */
+            height: 50px;
+        }
+        .father6{
+            padding:0 200px;/* 核心 */
+            overflow: hidden;
+        }
+        .son6_left{
+            margin-left: -100%;/* 核心 */
+            left: -200px;/* 核心 */
+            width: 200px;
+            background: yellowgreen;
+        }
+        .son6_right{
+            margin-left: -200px;/* 核心 */
+            right: -200px;/* 核心 */
+            width: 200px;
+            background: yellowgreen;
+        }
+        .son6_main{ 
+            width: 100%;/* 核心 */
+            background: #6596df;
+        }
+        /*左右定宽中间自适应6: 双飞翼布局*/
+        .son7_left{
+            float: left;/* 核心 */
+            height: 50px;
+            margin-left: -100%;/* 核心 */
+            width: 200px;
+            background: yellowgreen;
+        }
+        .son7_right{
+            float: left;/* 核心 */
+            height: 50px;
+            margin-left: -200px;/* 核心 */
+            width: 200px;
+            background: yellowgreen;
+        }
+        .son7_main{ 
+            float: left;/* 核心 */
+            height: 50px;
+            width: 100%;/* 核心 */
+        }
+        .son7_main-inner{ 
+            margin: 0 200px;/* 核心 */
+            height: 50px;
+            background: #6596df;
+        }
+    </style>
+</head>
+<body>
+    <div class="father1">
+        <div class="son1_left"></div>
+        <div class="son1_right"></div>
+        <div class="son1_main"></div>
+    </div>
+    <br/>
+    <div class="father2">
+        <div class="son2_left"></div>
+        <div class="son2_main"></div>
+        <div class="son2_right"></div>
+    </div>
+    <br/>
+    <div class="father3">
+        <div class="son3_left"></div>
+        <div class="son3_main"></div>
+        <div class="son3_right"></div>
+    </div>
+    <br/>
+    <div class="father4">
+        <div class="son4_left"></div>
+        <div class="son4_main"></div>
+        <div class="son4_right"></div>
+    </div>
+    <br/>
+    <div class="father5">
+        <div class="son5_main"></div>
+        <div class="son5_left"></div>
+        <div class="son5_right"></div>
+    </div>
+    <br/>
+    <div class="father6">
+        <div class="son6_main"></div>
+        <div class="son6_left"></div>
+        <div class="son6_right"></div>
+    </div>
+    <br/>
+    <div class="son7_main">
+        <div class="son7_main-inner"></div>
+    </div> 
+    <div class="son7_left"></div>
+    <div class="son7_right"></div>
+</body>
+</html>

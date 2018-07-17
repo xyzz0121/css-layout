@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>圣杯布局</title>
+<style type="text/css">
+    .son6_left,.son6_main,.son6_right{ 
+        position: relative;
+        float: left;
+        height: 50px;
+    }
+    .father6{
+        padding:0 200px;
+        overflow: hidden;
+    }
+    .son6_left{
+        margin-left: -100%;
+        left: -200px;
+        width: 200px;
+        background: yellowgreen;
+    }
+    .son6_right{
+        margin-left: -200px;
+        right: -200px;
+        width: 200px;
+        background: yellowgreen;
+    }
+    .son6_main{ 
+        width: 100%;
+        background: #6596df;
+        word-break: break-all;
+
+    }
+</style>
+</head>
+<body>
+<div class="father6">
+    <div class="son6_main"></div>
+    <div class="son6_left"></div>
+    <div class="son6_right"></div>
+</body>
+</html>

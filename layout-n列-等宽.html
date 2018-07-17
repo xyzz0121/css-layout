@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>n列等宽</title>
+    <style>
+        /* n列等宽1: flex  */
+        .father1{
+            display:-webkit-box; /* 核心 */
+        }
+        .son1_1{
+            background:yellow;
+            -webkit-box-flex:1; /* 核心 */
+            height:50px;
+        }
+        .son1_2{
+            background:yellowgreen;
+            -webkit-box-flex:1; /* 核心 */
+            height:50px;
+        }
+        .son1_3{
+            background:#6596df;
+            -webkit-box-flex:1; /* 核心 */
+            height:50px;
+        }
+        /* n列等宽2: float+百分比 示例为三列 两列的话则均为50% 以此类推 */
+        .father2{
+            overflow: hidden; /* 核心 */
+        }
+        .son2_1{
+            float:left; /* 核心 */
+            width:33.3%; /* 核心 */
+            background:yellow;
+            height:50px;
+        }
+        .son2_2{
+            float:left; /* 核心 */
+            width:33.3%; /* 核心 */
+            background:yellowgreen;
+            height:50px;
+        }
+        .son2_3{
+            float:left; /* 核心 */
+            width:33.4%; /* 核心 */
+            background:#6596df;
+            height:50px;
+        }
+        /* n列等宽3: inline-block+百分比 原理同上 只不过这inline-block不脱离文档流 不过要注意inline-block的坑 */
+        .father3{
+            font-size: 0 /* 核心 */
+        }
+        .son3_1{
+            display: inline-block; /* 核心 */
+            width:33.3%; /* 核心 */
+            background:yellow;
+            height:50px;
+        }
+        .son3_2{
+            display: inline-block; /* 核心 */
+            width:33.3%; /* 核心 */
+            background:yellowgreen;
+            height:50px;
+        }
+        .son3_3{
+            display: inline-block; /* 核心 */
+            width:33.4%; /* 核心 */
+            background:#6596df;
+            height:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="father1">
+        <div class="son1_1"></div>
+        <div class="son1_2"></div>
+        <div class="son1_3"></div>
+    </div>
+    <br/>
+    <div class="father2">
+        <div class="son2_1"></div>
+        <div class="son2_2"></div>
+        <div class="son2_3"></div>
+    </div>
+    <br/>
+    <div class="father3">
+        <div class="son3_1"></div>
+        <div class="son3_2"></div>
+        <div class="son3_3"></div>
+    </div>
+</body>
+</html>
